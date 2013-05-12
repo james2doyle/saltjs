@@ -40,6 +40,9 @@ Cool. Change it up! You can choose your own mapping methods if you want. Just ch
 
 That is because you are using a selector that has a live [nodelist](https://developer.mozilla.org/en/docs/DOM/NodeList) collection.
 
+
+### License
+
 (The MIT License)
 
 Copyright (c) 2013 James Doyle <james2doyle@gmail.com>
