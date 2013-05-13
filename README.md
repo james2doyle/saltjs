@@ -34,7 +34,7 @@ Keep in mind the regex used in that example is **much more complicated than mine
 
 ### I don't like FOO for selecting BAR
 
-Cool. Change it up! You can choose your own mapping methods if you want. Just change the key in the 'm' object and you are good.
+Cool. Change it up! You can choose your own mapping methods if you want. Just change the key in the 'matches' object and you are good.
 
 ### X returns an array!
 
