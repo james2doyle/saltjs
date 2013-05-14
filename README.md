@@ -7,7 +7,17 @@ slat.js is micro DOM selector library. Minified, it comes in at 263 bytes! (with
 
 It looks like there are a couple ways to do this in even less code...
 
-[Tomasz Żełudziewicz smaller version](https://gist.github.com/ofca/5575581) and smaller still is [Michał Wachowskis even smaller version](https://gist.github.com/Potfur/5576225).
+#### Update
+
+Looks like Tomasz has come up with one last version based on the one by Michał Wachowskis. It removes the querySelectorAll "?" key and runs it if there is no prefix.
+
+[Ultimate Version](https://gist.github.com/ofca/5576459)
+
+#### Other versions
+
+[Tomasz Żełudziewicz first version](https://gist.github.com/ofca/5575581)
+
+[Michał Wachowskis fork of that small one](https://gist.github.com/Potfur/5576225).
 
 ### jsPerf testing
 
