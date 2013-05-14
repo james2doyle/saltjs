@@ -3,6 +3,18 @@ saltjs
 
 slat.js is micro DOM selector library. Minified, it comes in at 263 bytes! (with attribution...)
 
+### No longer the smallest or fastest!!
+
+Tomasz Żełudziewicz saw my post on google plus about this library and wrote 
+an even smaller one that *does not* use regex to parse the query.
+
+[It is here in a gist](https://gist.github.com/ofca/5575581).
+
+### jsPerf testing
+
+I also wrote a jsPerf comparing this lib and the new one by Tomasz. It looks like they are both still slower than
+any document.get command...
+
 ### How it works
 
 It uses a regular expression to map different queries you pass through it to their native get functions.
