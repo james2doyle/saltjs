@@ -12,7 +12,7 @@ an even smaller one that *does not* use regex to parse the query.
 
 ### jsPerf testing
 
-I also wrote a jsPerf comparing this lib and the new one by Tomasz. It looks like they are both still slower than
+I also wrote a [jsPerf test](http://jsperf.com/micro-selector-library-comparison) comparing this lib and the new one by Tomasz. It looks like they are both still slower than
 any document.get command...
 
 ### How it works
