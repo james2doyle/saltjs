@@ -5,10 +5,10 @@ slat.js is micro DOM selector library. Minified, it comes in at 263 bytes! (with
 
 ### No longer the smallest or fastest!!
 
-Tomasz Żełudziewicz saw my post on google plus about this library and wrote 
-an even smaller one that *does not* use regex to parse the query.
+It looks like there are a couple ways to do this in even less code...
 
-[It is here in a gist](https://gist.github.com/ofca/5575581).
+[Tomasz Żełudziewicz smaler version](https://gist.github.com/ofca/5575581).
+[Michał Wachowski even smaller version](https://gist.github.com/Potfur/5576225)
 
 ### jsPerf testing
 
