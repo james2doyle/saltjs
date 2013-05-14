@@ -7,7 +7,7 @@ slat.js is micro DOM selector library. Minified, it comes in at 263 bytes! (with
 
 It looks like there are a couple ways to do this in even less code...
 
-[Tomasz Żełudziewicz smaler version](https://gist.github.com/ofca/5575581) and smaller still is [Michał Wachowskis even smaller version](https://gist.github.com/Potfur/5576225).
+[Tomasz Żełudziewicz smaller version](https://gist.github.com/ofca/5575581) and smaller still is [Michał Wachowskis even smaller version](https://gist.github.com/Potfur/5576225).
 
 ### jsPerf testing
 
