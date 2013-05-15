@@ -18,8 +18,7 @@ Tomasz Żełudziewicz Versions
 
 ### jsPerf testing
 
-I also wrote a [jsPerf test](http://jsperf.com/micro-selector-library-comparison) comparing this lib and the new one by Tomasz. It looks like they are both still slower than
-any document.get command...
+[jsPerf test](http://jsperf.com/micro-selector-libraries)
 
 ### How it works
 
