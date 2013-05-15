@@ -3,21 +3,18 @@ saltjs
 
 slat.js is micro DOM selector library. Minified, it comes in at 263 bytes! (with attribution...)
 
-### No longer the smallest or fastest!!
+### No longer the smallest
 
 It looks like there are a couple ways to do this in even less code...
 
-#### Update
-
-Looks like Tomasz has come up with one last version based on the one by Michał Wachowskis. It removes the querySelectorAll "?" key and runs it if there is no prefix.
-
-[Ultimate Version](https://gist.github.com/ofca/5576459)
-
 #### Other versions
 
-[Tomasz Żełudziewicz first version](https://gist.github.com/ofca/5575581)
+Tomasz Żełudziewicz Versions
+[version 1](https://gist.github.com/ofca/5575581)
+[version 2](https://gist.github.com/ofca/5576459)
+[version 3](https://gist.github.com/ofca/5577178)
 
-[Michał Wachowskis fork of that small one](https://gist.github.com/Potfur/5576225).
+[Michał Wachowskis fork](https://gist.github.com/Potfur/5576225).
 
 ### jsPerf testing
 
@@ -38,7 +35,7 @@ $('@namediv');
 // get by element tag name
 $('=div');
 // get element by query selector
-$('?div div.inside');
+$('*div div.inside');
 // getAttribute of name
 $('#iddiv').getAttribute('name');
 // getAttribute of name from nodelist
