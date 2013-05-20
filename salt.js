@@ -7,7 +7,7 @@ window.$ = function(selector) {
     '@': 'getElementsByName',
     '=': 'getElementsByTagName',
     '*': 'querySelectorAll'
-  }[selector[0]];
+  }[selector[0]]; // you can treat a string as an array of characters
   // now pass the target without the key
   return (document[matches](selector.slice(1)));
 };
