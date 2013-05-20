@@ -22,7 +22,7 @@ Tomasz Żełudziewicz Versions
 
 ### How it works
 
-It uses a regular expression to map different queries you pass through it to their native get functions.
+It uses an array string to map different queries you pass through it to their native get functions.
 
 ```javascript
 // get by id
@@ -45,9 +45,7 @@ The reason I don't just use querSelectorAll for everything is because it is slow
 
 [See this jsperf test](http://jsperf.com/getelementbyid-vs-queryselector/11)
 
-Yes, I see that the mapping is slower for newer versions of Chrome. But almost every other browser and device is slower using querySelectorAll over the mapping method.
-
-Keep in mind the regex used in that example is **much more complicated than mine**.
+Yes, I know that this library is slower than native gets, sometimes massively. But the point here is to beat querySelectorAll and it does it's job by that standard.
 
 ### I don't like FOO for selecting BAR
 
