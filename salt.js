@@ -7,10 +7,7 @@ window.$ = function(selector) {
     '@': 'getElementsByName',
     '=': 'getElementsByTagName',
     '*': 'querySelectorAll'
-  }[/[=#@.*]/.exec(selector)[0]];
-  // regex function to split the command with the target
-  // so $('#iddiv') would return '#'
-  // m[t] returns the command. use that in the document object
-  // now pass the target without the match key
+  }[selector[0]];
+  // now pass the target without the key
   return (document[matches](selector.slice(1)));
 };
