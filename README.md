@@ -44,7 +44,7 @@ Here are a couple of little things you can do to shorten some syntax.
 ```javascript
 // probably the most useful and allows $('#iddiv').find('.inside')
 Element.prototype.find = Element.prototype.querySelectorAll;
-// another useful one for doing $('.inside').each()
+// another useful one for doing $('.inside').forEach()
 NodeList.prototype.forEach = Array.prototype.forEach;
 // you could do something with attr but this works too
 Element.prototype.get = Element.prototype.getAttribute;
