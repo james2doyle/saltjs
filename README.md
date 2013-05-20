@@ -16,10 +16,6 @@ Tomasz Żełudziewicz Versions
 
 [Michał Wachowskis fork](https://gist.github.com/Potfur/5576225).
 
-### jsPerf testing
-
-[jsPerf test](http://jsperf.com/micro-selector-libraries)
-
 ### How it works
 
 It uses an array string to map different queries you pass through it to their native get functions.
@@ -40,6 +36,44 @@ $('#iddiv').getAttribute('name');
 // getAttribute of name from nodelist
 $('.classdiv')[0].getAttribute('name');
 ```
+
+### Fun with Mapping
+
+Here are a couple of little things you can do to shorten some syntax.
+
+```javascript
+// probably the most useful and allows $('#iddiv').find('.inside')
+Element.prototype.find = Element.prototype.querySelectorAll;
+// another useful one for doing $('.inside').each()
+NodeList.prototype.forEach = Array.prototype.forEach;
+// you could do something with attr but this works too
+Element.prototype.get = Element.prototype.getAttribute;
+Element.prototype.set = Element.prototype.setAttribute;
+Element.prototype.has = Element.prototype.hasAttribute;
+```
+
+So you can keep doing this with native commands and get something pretty close to jQuery.
+
+If you used all of those you could turn this:
+
+```javascript
+var items = document.getElementById('iddiv').querySelectorAll('.inside');
+for (var i = items.length - 1; i >= 0; i--) {
+  items[i].setAttribute('name', 'Guy Dude Bro');
+}
+```
+
+into this:
+
+```javascript
+$('#iddiv').find('.inside').forEach(function(elem){
+  elem.set('name', 'Guy Dude Bro');
+});
+```
+
+### jsPerf testing
+
+[jsPerf test](http://jsperf.com/micro-selector-libraries)
 
 The reason I don't just use querSelectorAll for everything is because it is slower than the native get commands*.
 
