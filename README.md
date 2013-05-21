@@ -3,6 +3,8 @@ saltjs
 
 slat.js is micro DOM selector library. Minified, it comes in at 240 bytes! (with attribution...)
 
+Here is a [quick video](http://youtu.be/kTA7TNpB9dg) showing it off
+
 ### No longer the smallest
 
 It looks like there are a couple ways to do this in even less code...
