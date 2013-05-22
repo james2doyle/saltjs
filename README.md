@@ -46,10 +46,26 @@ Here are a couple of little things you can do to shorten some syntax.
 Element.prototype.find = Element.prototype.querySelectorAll;
 // another useful one for doing $('.inside').forEach()
 NodeList.prototype.forEach = Array.prototype.forEach;
-// you could do something with attr but this works too
-Element.prototype.get = Element.prototype.getAttribute;
-Element.prototype.set = Element.prototype.setAttribute;
-Element.prototype.has = Element.prototype.hasAttribute;
+// $().attr('prop', 'value') support
+Element.prototype.attr = function(name, value) {
+  if(value) {
+    this.setAttribute(name, value);
+  } else {
+    return this.getAttribute(name);
+  }
+};
+// $().css('prop', 'value') support
+Element.prototype.css = function(prop, value) {
+  if (value) {
+    this.style[prop] = value;
+  } else {
+    return this.style[prop];
+  }
+};
+// $().on('event', function(el){});
+Element.prototype.on = function(evt, fn) {
+  this['on'+evt] = fn.bind(this);
+};
 ```
 
 So you can keep doing this with native commands and get something pretty close to jQuery.
@@ -67,7 +83,7 @@ into this:
 
 ```javascript
 $('#iddiv').find('.inside').forEach(function(elem){
-  elem.set('name', 'Guy Dude Bro');
+  elem.attr('name', 'Guy Dude Bro');
 });
 ```
 
