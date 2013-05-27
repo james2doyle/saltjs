@@ -1,7 +1,7 @@
 saltjs
 ======
 
-slat.js is micro DOM selector library. Minified, it comes in at 240 bytes! (with attribution...)
+salt.js is micro DOM selector library. Minified, it comes in at 240 bytes! (with attribution...)
 
 Here is a [quick video](http://youtu.be/kTA7TNpB9dg) showing it off
 
