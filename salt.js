@@ -11,11 +11,36 @@ window.$ = function(selector) {
   // now pass the target without the key
   var el = (document[matches](selector.slice(1)));
   // if there is one element than return the 0 element
-  return ((el.length === 1) ? el[0]: el);
+  return ((el.length < 2) ? el[0]: el);
 };
 
 // probably the most useful and allows $('#iddiv').find('.inside')
 window.Element.prototype.find = window.Element.prototype.querySelectorAll;
+// more like recursive search since you cannot use querySelectorAll
+// for NodeLists - dumb!
+window.NodeList.prototype.find = function(elem) {
+  var flatten = function (array) {
+    var returnValue = [];
+    var temporaryFlatArray;
+    for (var i = 0; i < array.length; i++) {
+      // if this array has one item
+      if (array.length === 1) {
+        returnValue.push(array[i]);
+      } else {
+        temporaryFlatArray = flatten(array[i]);
+        for (var j = 0; j < temporaryFlatArray.length; j++) {
+          returnValue.push(temporaryFlatArray[j]);
+        }
+      }
+    }
+    return returnValue;
+  };
+  var items = [];
+  this.each(function(el){
+    items.push(el.find(elem));
+  });
+  return flatten(items);
+};
 
 // another useful one for doing $('.inside').each()
 window.NodeList.prototype.each = Array.prototype.forEach;
@@ -87,15 +112,15 @@ window.Element.prototype.removeClass = function(name) {
 };
 
 window.Element.prototype.hasClass = function(name) {
+  // contains? how annoying
   return this.classList.contains(name);
 };
 
 window.NodeList.prototype.first = function() {
-  var _this = this[0];
-  return _this;
+  // if this is more than one item return the first
+  return (this.length < 2) ? this : this[0];
 };
 
 window.NodeList.prototype.last = function() {
-  var _this = this[this.length - 1];
-  return _this;
+  return this[this.length - 1];
 };
