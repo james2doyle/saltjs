@@ -20,7 +20,7 @@
   </style>
 </head>
 <body>
-  <div id="iddiv" class="classdiv" name="namediv">
+  <div id="iddiv" class="classdiv" name="namediv" data-role="container">
     <div class="inside"></div>
     <div class="inside"></div>
     <div class="inside"></div>
@@ -44,7 +44,7 @@
     // getAttribute of name
     console.log($('#iddiv').getAttribute('name'));
     // getAttribute of name from nodelist
-    console.log($('.classdiv').getAttribute('name'));
+    console.log($('.classdiv').getAttribute('data-role'));
   </script>
 </body>
 </html>
