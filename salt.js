@@ -10,7 +10,8 @@ window.$ = function(selector) {
   }[selector[0]]; // you can treat a string as an array of characters
   // now pass the target without the key
   var el = (document[matches](selector.slice(1)));
-  return (el.length === 1) ? el[0] : el;
+  // if there is one element than return the 0 element
+  return ((el.length === 1) ? el[0]: el);
 };
 
 // probably the most useful and allows $('#iddiv').find('.inside')
@@ -23,6 +24,7 @@ window.NodeList.prototype.each = Array.prototype.forEach;
 window.Element.prototype.attr = function(name, value) {
   if(value) {
     this.setAttribute(name, value);
+    return this;
   } else {
     return this.getAttribute(name);
   }
@@ -32,6 +34,7 @@ window.Element.prototype.attr = function(name, value) {
 window.Element.prototype.css = function(prop, value) {
   if (value) {
     this.style[prop] = value;
+    return this;
   } else {
     return this.style[prop];
   }
