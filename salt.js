@@ -41,15 +41,58 @@ window.NodeList.prototype.css = function(prop, value) {
   this.each(function(el) {
     el.css(prop, value);
   });
+  return this;
 };
 
 // $().on('event', function(el){});
 window.NodeList.prototype.on = function(eventType, callback){
-  Array.prototype.forEach.call(this, function(el){
+  this.each(function(el){
     el.addEventListener(eventType, callback);
   });
+  return this;
 };
 
 window.Element.prototype.on = function(eventType, callback) {
-  this['on'+eventType] = callback.bind(this);
+  this.addEventListener(eventType, callback);
+  return this;
+};
+
+// $().addClass('name');
+window.NodeList.prototype.addClass = function(name){
+  this.each(function(el) {
+    el.classList.add(name);
+  });
+  return this;
+};
+
+window.Element.prototype.addClass = function(name) {
+  this.classList.add(name);
+  return this;
+};
+
+// $().removeClass('name');
+window.NodeList.prototype.removeClass = function(name){
+  this.each(function(el) {
+    el.classList.remove(name);
+  });
+  return this;
+};
+
+window.Element.prototype.removeClass = function(name) {
+  this.classList.add(name);
+  return this;
+};
+
+window.Element.prototype.hasClass = function(name) {
+  return this.classList.contains(name);
+};
+
+window.NodeList.prototype.first = function() {
+  var _this = this[0];
+  return _this;
+};
+
+window.NodeList.prototype.last = function() {
+  var _this = this[this.length - 1];
+  return _this;
 };
