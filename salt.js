@@ -8,6 +8,8 @@ window.$ = function(selector) {
     '=': 'getElementsByTagName',
     '*': 'querySelectorAll'
   }[selector[0]]; // you can treat a string as an array of characters
-  // now pass the target without the key
-  return (document[matches](selector.slice(1)));
+  // now pass the selector without the key/first character
+  var el = (document[matches](selector.slice(1)));
+  // if there is one element than return the 0 element
+  return ((el.length < 2) ? el[0]: el);
 };
