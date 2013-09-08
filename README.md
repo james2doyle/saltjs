@@ -166,7 +166,7 @@ for (var i = items.length - 1; i >= 0; i--) {
 into this:
 
 ```javascript
-$('#iddiv').find('.inside').forEach(function(elem){
+$('#iddiv').find('.inside').each(function(elem){
   elem.attr('name', 'Guy Dude Bro');
 });
 ```
