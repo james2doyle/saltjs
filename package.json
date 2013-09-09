@@ -1,0 +1,32 @@
+{
+  "name": "saltjs",
+  "version": "1.0.0",
+  "description": "a micro DOM selector library built off the native DOM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/james2doyle/saltjs"
+  },
+  "keywords": [
+    "salt",
+    "$",
+    "micro",
+    "DOM",
+    "mini"
+  ],
+  "author": "James Doyle",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "64ee8ee4ae37e9dccd1d403d14cc1bc61cbe737f",
+  "bugs": {
+    "url": "https://github.com/james2doyle/saltjs/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "*",
+    "robotskirt": "~2.7.1"
+  }
+}
