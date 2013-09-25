@@ -98,15 +98,19 @@ window.NodeList.prototype.css = function(prop, value) {
 };
 
 // $().on('event', function(el){});
-window.NodeList.prototype.on = function(eventType, callback){
-  this.each(function(el){
-    el.addEventListener(eventType, callback);
-  });
+window.Element.prototype.on = function(eventType, callback) {
+  eventType = eventType.split(' ');
+  for (var i = 0; i < eventType.length; i++) {
+    this.addEventListener(eventType[i], callback);
+  }
   return this;
 };
 
-window.Element.prototype.on = function(eventType, callback) {
-  this.addEventListener(eventType, callback);
+
+window.NodeList.prototype.on = function(eventType, callback){
+  this.each(function(el){
+    el.on(eventType, callback);
+  });
   return this;
 };
 
