@@ -45,7 +45,9 @@ Here are a couple of little things you can do to shorten some syntax.
 
 ```javascript
 // probably the most useful and allows $('#iddiv').find('.inside')
-window.Element.prototype.find = window.Element.prototype.querySelectorAll;
+window.Element.prototype.find = function(selector) {
+  return this.querySelectorAll(selector);
+};
 
 // doing a find in a NodeList doesnt really work. I had a function that
 // would look inside and get the element but it was pretty big and
