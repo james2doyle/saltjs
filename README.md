@@ -41,6 +41,10 @@ $('.classdiv')[0].getAttribute('name');
 
 ### Fun with Mapping
 
+*WARNING!*
+
+You need to extend native code to produce these functions. This is not recommended. Salt is really a micro selector library not a substitution for jQuery or anything else.
+
 Here are a couple of little things you can do to shorten some syntax.
 
 ```javascript
